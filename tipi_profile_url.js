@@ -3,9 +3,10 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://jira.zhp.pl/*
 // @grant       none
-// @version     1.0
+// @version     1.1
 // @author      Norbert Piątkowski
-// @description 6.10.2021, 19:00:00
+// @downloadURL https://raw.githubusercontent.com/norberto5/zhp_jira_helpers/main/tipi_profile_url.js
+// @description 6.10.2021, 19:13:00
 // ==/UserScript==
 
 
