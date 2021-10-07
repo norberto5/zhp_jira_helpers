@@ -3,15 +3,16 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://jira.zhp.pl/*
 // @grant       none
-// @version     1.1
+// @version     1.2
 // @author      Norbert Piątkowski
 // @downloadURL https://raw.githubusercontent.com/norberto5/zhp_jira_helpers/main/tipi_profile_url.js
-// @description 6.10.2021, 19:13:00
+// @description 7.10.2021, 12:32:00
 // ==/UserScript==
 
 
 JIRA.bind(JIRA.Events.ISSUE_REFRESHED, addLinkToUserProfile);
 JIRA.bind(JIRA.Events.REFRESH_ISSUE_PAGE, addLinkToUserProfile);
+addLinkToUserProfile();
 
 function addLinkToUserProfile()
 {
