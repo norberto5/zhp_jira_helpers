@@ -3,12 +3,12 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://jira.zhp.pl/*
 // @grant       none
-// @version     1.3
+// @version     1.4
 // @author      Norbert Piątkowski
 // @homepageURL https://github.com/norberto5/zhp_jira_helpers
 // @supportURL  https://github.com/norberto5/zhp_jira_helpers/issues
 // @downloadURL https://raw.githubusercontent.com/norberto5/zhp_jira_helpers/main/tipi_profile_url.js
-// @description Last update: 7.10.2021
+// @description Last update: 11.10.2021 - added support for Tipi HD tickets
 // ==/UserScript==
 
 
@@ -53,7 +53,12 @@ function getUserId()
   
   if(!propertyField)
   {
-    return "";
+    propertyField = document.getElementById("customfield_10615-val");
+    
+    if(!propertyField)
+    {
+      return "";
+    }
   }
   
   var zhpId = propertyField.innerText;
