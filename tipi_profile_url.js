@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name        Add links on JIRA issues to Tipi profile and to copy cmdlet to check existing AAD accounts
 // @namespace   Violentmonkey Scripts
-// @require     https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js
-// @include     https://jira.zhp.pl/*
-// @version     2.0
+// @match       https://jira.zhp.pl/*
+// @grant       none
+// @version     2.1
 // @author      Norbert Piątkowski
 // @homepageURL https://github.com/norberto5/zhp_jira_helpers
 // @supportURL  https://github.com/norberto5/zhp_jira_helpers/issues
@@ -11,8 +11,11 @@
 // @description Last update: 05.05.2023 - added user name copying link and Powershell cmdlet search copying link
 // ==/UserScript==
 
-JIRA.bind(JIRA.Events.ISSUE_REFRESHED, addLinks);
-JIRA.bind(JIRA.Events.REFRESH_ISSUE_PAGE, addLinks);
+if (typeof JIRA !== 'undefined')
+{
+  JIRA.bind(JIRA.Events.ISSUE_REFRESHED, addLinks);
+  JIRA.bind(JIRA.Events.REFRESH_ISSUE_PAGE, addLinks);
+}
 addLinks();
 
 function addLinks()
